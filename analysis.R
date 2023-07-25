@@ -3,13 +3,16 @@
 
 library(RCurl)
 library(XML)
-library(stringr)
+# library(stringr)
 
 ### (2) Grabbing information from the web page ----------------------------- ###
 
 # url <- "http://www.letpub.com.cn/index.php?journalid=15&page=journalapp&view=detail"
-url <- "http://www.letpub.com.cn/index.php?journalid=18&page=journalapp&view=detail"
+# url <- "http://www.letpub.com.cn/index.php?journalid=18&page=journalapp&view=detail"
 url <- "http://www.letpub.com.cn/index.php?journalid=3320&page=journalapp&view=detail"
+
+# MCP with 2022s
+url <- "http://www.letpub.com.cn/index.php?journalid=5931&page=journalapp&view=detail"
 cont <- getURL(url)
 
 # Extracting the journal name. 
@@ -58,7 +61,7 @@ fenqu.2022s <- tabs[[8]]
 fenqu.2021j <- tabs[[10]]
 fenqu.2021s <- tabs[[12]]
 fenqu.2020s <- tabs[[14]]
-DT::datatable(fenqu.2022s)
+DT::datatable(fenqu.2020s) # ?????????????????????“????????????”??????
 
 if.item <- c("?????????", 
              "2022?????????????????????", "2022??????????????????", 
@@ -140,4 +143,3 @@ j.result <- c(j.name,
               s.2020.d, s.2020.df, 
               s.2020.x, s.2020.xf, 
               s.2020.top, s.2020.rev)
-
